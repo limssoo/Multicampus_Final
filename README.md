@@ -3,11 +3,19 @@ Multicampus Final Project
 
 
 
-![로고](D:\FInal_Project\Git\Multicampus_Final\Docs\로고.png)
+<img src="https://github.com/limssoo/Multicampus_Final/blob/master/Docs/%EB%A1%9C%EA%B3%A0.png?raw=true">
 
-![색상](D:\FInal_Project\Git\Multicampus_Final\Docs\색상.png)
 
-![폰트](D:\FInal_Project\Git\Multicampus_Final\Docs\폰트.png)
+
+<img src="https://github.com/limssoo/Multicampus_Final/blob/master/Docs/%EC%83%89%EC%83%81.png?raw=true">
+
+
+
+**폰트**
+
+https://fonts.google.com/noto/specimen/Noto+Sans+KR
+
+
 
 **프로젝트 내용**
 

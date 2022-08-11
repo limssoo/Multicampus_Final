@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 모달창 </title>
+  <link rel="stylesheet" href="modal.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <button>메뉴</button>
+
+  <div class="modal">
+    <div class="home" onclick="location.href='#'">
+    </div>
+    <div>
+      <input type="button" class="cancel" value="취소" />
+    </div>
+    <br><br>
+    <div class="menu1">
+      <ul>
+        <li><a class="active" href="#home">영화</a></li>
+        <li><a href="#news">개봉/개봉예정작</a></li>
+        <li><a href="#contact">최신 영화</a></li>
+        <li><a href="#about">한국 영화</a></li>
+        <li><a href="#about">해외 영화</a></li>
+        <li><a href="#about">애니메이션</a></li>
+        <li><a href="#about">상영관</a></li>
+      </ul>
+      <ul>
+        <li><a class="active" href="#home">드라마</a></li>
+        <li><a href="#news">최근 화제 드라마</a></li>
+        <li><a href="#contact">한국드라마</a></li>
+        <li><a href="#about">해외드라마</a></li>
+      </ul>
+      <ul>
+        <li><a class="active" href="#home">예능</a></li>
+        <li><a href="#news">최신 예능</a></li>
+        <li><a href="#contact">한국 예능</a></li>
+        <li><a href="#about">해외 예능</a></li>
+        <li><a href="#about">완결 예능</a></li>
+      </ul>
+      <ul>
+        <li><a class="active" href="#home">OTT</a></li>
+        <li><a href="#news">넷플릭스</a></li>
+        <li><a href="#contact">디즈니 플러스</a></li>
+        <li><a href="#about">애플TV</a></li>
+        <li><a href="#about">쿠팡플레이</a></li>
+        <li><a href="#about">왓챠</a></li>
+        <li><a href="#about">시즌</a></li>
+        <li><a href="#about">WAVVE</a></li>
+        <li><a href="#about">티빙</a></li>
+      </ul>
+    </div>
+    <br><br>
+    <div class="menu2">
+      <ul>
+        <li><a class="active" href="#home">소식</a></li>
+        <li><a href="#news">국내 소식</a></li>
+        <li><a href="#contact">해외 소식</a></li>
+        <li><a href="#about">수상 소식</a></li>
+        <li><a href="#about">이벤트</a></li>
+      </ul>
+      <ul>
+        <li><a class="active" href="#home">고객센터</a></li>
+        <li><a href="#news">공지사항</a></li>
+        <li><a href="#contact">커뮤니티</a></li>
+        <li><a href="#about">자주하는 질문</a></li>
+        <li><a href="#about">불편/불만사항 접수</a></li>
+        <li><a href="#about"></a></li>
+      </ul>
+      <ul>
+        <li><a class="active" href="#home">MONOTT</a></li>
+        <li><a href="#news">홈페이지 소개</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <script>
+    $(function () {
+
+      $("button").click(function () {
+        $(".modal").fadeIn();
+      });
+
+      $(".modal_content").click(function () {
+        $(".modal").fadeOut();
+      });
+
+    });
+    $(function () {
+      $(".cancel").click(function () {
+        $(".modal").fadeOut();
+      })
+    })
+
+  </script>
+</body>
+
+</html>

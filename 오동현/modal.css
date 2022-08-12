@@ -24,39 +24,39 @@ button{ position:absolute; top:50%; left:50%;
     box-sizing:border-box; padding:74px 0;
     line-height:23px; cursor:pointer;
   }
+  .top{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    
+  }
   .home{
     background-color: #111111;
-    width: 200px; 
-    height:50px;
-    background-image: url(./img/MONOTT\ logo.png);
-    background-size: cover;
-    background-position: center;
-    border-radius: 50px;
-    display: flex;
     float: left;
-    margin: 20px 300px 0px;
-    cursor:pointer;
-    
+  }
+  .logo_home{
+    width: 250px;
   }
   .cancel{
     background-color: #cc0000;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    display: block;
-    margin:auto;
+    display: flex;
     margin-top: 20px;
     cursor:pointer;
+    justify-content: center;
+    font-size: large;
   }
   .menu1{
     background-color: #111111;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
   }
   .menu2{
     background-color: #111111;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     
   }
   ul {

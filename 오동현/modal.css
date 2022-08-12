@@ -52,13 +52,12 @@ button{ position:absolute; top:50%; left:50%;
     background-color: #111111;
     display: flex;
     justify-content: space-around;
-    margin: auto;
   }
   .menu2{
     background-color: #111111;
     display: flex;
     justify-content: space-around;
-    margin: auto;
+    
   }
   ul {
     list-style-type: none;

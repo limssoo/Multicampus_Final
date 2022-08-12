@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>메인</title>
+        <link rel="stylesheet" href="main2.css">
+    </head>
+<body style="background-color: #111111;">
+    <div class="slidebox">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+        <ul class="slidelist">
+            <li class="slideitem">
+                <a>
+                    <label for="slide03" class="prev"></label>
+                    <img src="./img/drama.jpg">
+                    <label for="slide02" class="next"></label>
+                </a>
+            </li>
+            <li class="slideitem">
+                <a>
+                    <label for="slide01" class="prev"></label>
+                    <img src="./img/movie.jpg">
+                    <label for="slide03" class="next"></label>
+                </a>
+            </li>
+            <li class="slideitem">
+                <a>
+                    <label for="slide02" class="prev"></label>
+                    <img src="./img/movie2.jpg">
+                    <label for="slide01" class="next"></label>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+
+    <ul class="slide-pagelist">
+        <li><label for="slide01"></label></li>
+        <li><label for="slide02"></label></li>
+        <li><label for="slide03"></label></li>
+    </ul>
+
+    
+</body>
+</html>

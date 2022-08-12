@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color:#111111;
+    list-style: none;
+}
+.tt-color{
+    color : #FFFFFF;
+}
+.item
+{
+    flex : 1 1 20%;
+
+}
+.container
+{
+    display: flex;
+    /* display: inline-flex; */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    justify-content: center;
+    align-content: space-between;
+    align-content: center;
+    /* justify-content: space-evenly; 양옆 간격 띄우기 */
+}

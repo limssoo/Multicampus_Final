@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kakao Login Test</title>
+<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+	<h1>Kakao Login Test</h1>
+	<span th:if="${userId==null}">
+		<a href="https://kauth.kakao.com/oauth/authorize?client_id=466d41bacd4906810d789e50dbcbde0e&redirect_uri=$http://localhost:8090/login&response_type=code">
+			<img src = "img/kakao_login_medium_narrow.png">
+		</a>
+	</span>
+	<span th:if="${userId!=null}">
+		<form name="logout" action="http://localhost:8090/logout">
+			<input type="submit" value="로그아웃">
+		</form>
+	</span>
+	
+	<html lang="en">
+
+
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      }
+    </script>
+</html>
+</body>
+</html>

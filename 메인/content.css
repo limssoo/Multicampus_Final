@@ -2,6 +2,8 @@
     font-family: 'Noto Sans KR', sans-serif;
     background-color:#111111;
     list-style: none;
+    color : #FFFFFF;
+            box-sizing: border-box;
 }
 .item
 {

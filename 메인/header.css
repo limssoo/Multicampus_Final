@@ -1,0 +1,136 @@
+#header {
+    background-color: #111111;
+    text-align: center;
+    align-items: center;
+}
+#header_table{
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 100;
+}
+#header_hr1{
+background-color: rgb(30, 30, 30);
+margin-top: 10px;
+margin-bottom: 10px;
+} 
+
+.ottbtn {
+background-color: #111111;
+width: 1520px;
+height: 160px;
+margin: auto;
+}
+
+.netflix{
+background-color: #111111;
+width: 150px; 
+height:150px;
+background-image: url(./netflix.png);
+background-size: 140px;
+background-position: center;
+float: left;
+background-repeat:no-repeat;
+margin:0px 20px 0px 20px;
+border: solid 2px grey;
+border-radius: 12px;
+cursor:pointer;
+}
+.wavve{
+background-color: white;
+width: 150px; 
+height:150px;
+background-image: url(./wavve.png);
+background-size: 140px;
+background-position: center;
+float: left;
+background-repeat:no-repeat;
+margin:0px 20px 0px 20px;
+border: solid 2px grey;
+border-radius: 12px;
+cursor:pointer;
+}
+.disney{
+background-color: white;
+width: 150px; 
+height:150px;
+background-image: url(./disney.png);
+background-size: 150px;
+background-position: center;
+float: left;
+background-repeat:no-repeat;
+margin:0px 20px 0px 20px;
+border: solid 2px grey;
+border-radius: 12px;
+cursor:pointer;
+}
+.appletv{
+background-color: white;
+width: 150px; 
+height:150px;
+background-image: url(./appletv.png);
+background-size: 140px;
+background-position: center;
+float: left;
+background-repeat:no-repeat;
+margin:0px 20px 0px 20px;
+border: solid 2px grey;
+border-radius: 12px;
+cursor:pointer;
+}
+.seezn{
+background-color: #111111;
+width: 150px; 
+height:150px;
+background-image: url(./seezn2.png);
+background-size: 150px;
+background-position: center;
+float: left;
+background-repeat:no-repeat;
+margin:0px 20px 0px 20px;
+border: solid 2px grey;
+border-radius: 12px;
+cursor:pointer;
+}
+.coupangplay{
+background-color: white;
+width: 150px; 
+height:150px;
+background-image: url(./coupang-play.png);
+background-size: 200px;
+background-position: center;
+float: left;
+background-repeat:no-repeat;
+margin:0px 20px 0px 20px;
+border: solid 2px grey;
+border-radius: 12px;
+cursor:pointer;
+}
+.tving{
+background-color: #111111;
+width: 150px; 
+height:150px;
+background-image: url(./tving.png);
+background-size: 140px;
+background-position: center;
+float: left;
+background-repeat:no-repeat;
+margin:0px 20px 0px 20px;
+border: solid 2px grey;
+border-radius: 12px;
+cursor:pointer;
+}
+.watcha{
+background-color: #111111;
+width: 150px; 
+height:150px;
+background-image: url(./watcha.png);
+background-size: 150px;
+background-position: center;
+float: left;
+background-repeat:no-repeat;
+margin:0px 20px 0px 20px;
+border: solid 2px grey;
+border-radius: 12px;
+cursor:pointer;
+}
+

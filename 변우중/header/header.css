@@ -1,0 +1,114 @@
+#header {
+    background-color: #111111;
+    text-align: center;
+    align-items: center;
+    height: 127px;
+    padding: 1rem;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    /* width: 100% */
+    left: 0;
+    right: 0;
+    z-index: 2;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#header_table {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 100;
+}
+#header_login {
+    padding-top: 5px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    word-spacing: 5px;
+    font-weight: bold;
+    color: #555555;
+}
+
+#header_hr1 {
+    background-color: rgb(30, 30, 30);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#login {
+    text-decoration-line: none;
+}
+
+#sitemap {
+    text-decoration-line: none;
+}
+
+a { color: #555555; }
+a:visited { color: #555555; }
+a:hover { color: #555555; }
+a:active { color: #555555; }
+
+#table_search {
+    padding-top: 40px;
+
+}
+
+#searchbox {
+    border: 0 solid black;
+    background-color: #e1e1e1;
+    width: 250px;
+    height: 32px;
+    text-align: center;
+  }
+
+#ottnew {
+    color: #bababa;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    word-spacing: 5px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+#img1 {
+    text-align: center;
+}
+
+.toggleSwitch {
+    width: 3.5rem;
+    height: 2rem;
+    display: block;
+    position: relative;
+    border-radius: 2rem;
+    background-color: rgb(100, 100, 100);
+    box-shadow: 0 0 1rem 3px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    margin: 10px 6px;
+  }
+  
+  .toggleSwitch .toggleButton {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: .2rem;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #3a3a3a;
+  }
+  
+  /* 체크박스가 체크되면 변경 이벤트 */
+  .toggleSwitch.active {
+    background: #555555;
+  }
+  
+  .toggleSwitch.active .toggleButton {
+    left: calc(100% - 1.7rem);
+    background: #fff;
+  }
+  
+  .toggleSwitch, .toggleButton {
+    transition: all 0.2s ease-in;
+  }

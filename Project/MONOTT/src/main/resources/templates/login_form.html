@@ -1,0 +1,38 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/login_form.css}">
+    <form th:action="@{/user/login}" method="post">
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">
+                사용자ID 또는 비밀번호를 확인해 주세요.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">사용자ID</label>
+            <input type="text" name="username" id="username" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">비밀번호</label>
+            <input type="password" name="password" id="password" class="form-control">
+        </div>
+        <button type="submit" class="login">로그인</button>
+        
+        <div class="apilogin">
+        <div class="" onclick="location.href='#'">
+          <img src="/imgs/kakao_logo.png" height="20px">
+        </div>
+        <div onclick="location.href='#'">
+          <img src="/imgs/naver_logo.png" height="20px">
+        </div>
+        <div onclick="location.href='#'">
+          <img src="/imgs/google_logo.png" height="20px">
+        </div>
+        </div>
+        
+    </form>
+</div>
+</html>

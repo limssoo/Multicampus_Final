@@ -1,0 +1,46 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/signup_form.css}">
+  
+    <div class="my-3 border-bottom">
+        <div>
+            <h4>회원가입</h4>
+        </div>
+    </div>
+    <div th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+        <div th:replace="form_errors :: formErrorsFragment"></div>
+        <div>
+            <label for="username" class="form-label">사용자ID</label>
+            <input type="text" th:field="*{username}" class="form-control">
+        </div>
+        <div>
+            <label for="password" class="form-label">비밀번호</label>
+            <input type="password" th:field="*{password1}" class="form-control">
+        </div>
+        <div>
+            <label for="password" class="form-label">비밀번호 확인</label>
+            <input type="password" th:field="*{password2}" class="form-control">
+        </div>
+        <div>
+            <label for="phone" class="form-label">전화번호</label>
+            <input type="tel" th:field="*{phone}" class="form-control">
+        </div>
+        <div>
+            <label for="address" class="form-label">주소</label>
+            <input type="text" th:field="*{address}" class="form-control">
+        </div>
+        <div>
+            <label for="birth" class="form-label">생년월일</label>
+            <input type="date" th:field="*{birth}" class="form-control">
+        </div>
+        <button type="submit" class=signupbtn>회원가입</button>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>
+</html>

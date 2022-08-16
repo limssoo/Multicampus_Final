@@ -1,0 +1,17 @@
+@charset "UTF-8";
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color:#111111;
+}
+.signupbtn{
+	background-color:#cc0000;
+}
+label{
+	color:white;
+}
+h4{
+	color:white;
+}
+.kakao{
+	float: left;
+}

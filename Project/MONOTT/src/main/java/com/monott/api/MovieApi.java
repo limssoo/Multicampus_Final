@@ -28,11 +28,12 @@ public class MovieApi {
 	      String jsonInString = "";
 
 	      try {
+
 	          RestTemplate restTemplate = new RestTemplate();
 
 	          HttpHeaders header = new HttpHeaders();
 	          HttpEntity<?> entity = new HttpEntity<>(header);
-	          String url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json";
+	          String url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json";
 
 	          UriComponents uri = UriComponentsBuilder.fromHttpUrl(url+"?"+"key=6acae879aea98ed34b0d088d754142eb&targetDt=20220801").build();
 
@@ -42,14 +43,9 @@ public class MovieApi {
 	          result.put("header", resultMap.getHeaders()); //헤더 정보 확인
 	          result.put("body", resultMap.getBody()); //실제 데이터 정보 확인
 
-	          LinkedHashMap lm = (LinkedHashMap)resultMap.getBody().get("boxOfficeResult");
-	          ArrayList<Map> dboxoffList = (ArrayList<Map>)lm.get("dailyBoxOfficeList");
-	          LinkedHashMap mnList = new LinkedHashMap<>();
-	          for (Map obj : dboxoffList) {
-	              mnList.put(obj.get("movieNm"),obj.get("audiAcc"));
-	          }
+	          //데이터를 제대로 전달 받았는지 확인 string형태로 파싱해줌
 	          ObjectMapper mapper = new ObjectMapper();
-	          jsonInString = mapper.writeValueAsString(mnList);
+	          jsonInString = mapper.writeValueAsString(resultMap.getBody());
 
 	      } catch (HttpClientErrorException | HttpServerErrorException e) {
 	          result.put("statusCode", e.getRawStatusCode());

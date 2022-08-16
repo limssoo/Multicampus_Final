@@ -19,30 +19,30 @@ import com.monott.user.User;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
-@Entity
+//@Getter
+//@Setter
+//@Entity
 public class Review {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer Review_Number;
-	
-	@ManyToOne
-	@JoinColumn(name = "id")
-	private User id;
-	
-	@ManyToMany
-	@JoinColumn(name = "Content_Key")
-	private Content Content_Key;
-	
-	@Column(length = 200)
-	private String Review_Content;
-	
-	@CreatedDate
-	private Date Review_Date;
-	
-	private Integer Reivew_Score;
-	
-	private Integer Review_Like;
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	private Integer Review_Number;
+//	
+//	@ManyToOne
+//	@JoinColumn(name = "id")
+//	private User id;
+//	
+//	@ManyToOne
+//	@JoinColumn(name = "Content_Key")
+//	private Content Content_Key;
+//	
+//	@Column(length = 200)
+//	private String Review_Content;
+//	
+//	@CreatedDate
+//	private Date Review_Date;
+//	
+//	private Integer Reivew_Score;
+//	
+//	private Integer Review_Like;
 }

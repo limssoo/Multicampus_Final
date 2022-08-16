@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>제목</td>
+                <td>누적 관객수</td>
+            </tr>
+        </thead>
+        <tbody class="table_body">
+
+        </tbody>
+        <button type="button" onclick="getJSON()"> json 불러오는 버튼</button>
+    </table>
+</body>
+</html>
+
+<script>
+	function getJSON() {
+		$.ajax({
+			type : "get",
+			url : "http://localhost:9000/movie",
+			dataType : "json",
+			success : function(data) {
+				console.log("success");
+				console.log(data);
+				str = '<tr>';
+				$.each(data, function(i) {
+					str += '<td>' + data[i].movieNm + '</td><td>'
+							+ data[i].salesAmt + '</td>';
+					str += '</tr>';
+				});
+				$('.table_body').append(str);
+			},
+			error : function() {
+				console.log("error");
+			}
+		})
+	}
+</script>

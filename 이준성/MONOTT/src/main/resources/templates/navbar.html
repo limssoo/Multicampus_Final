@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="UTF-8">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headers · Bootstrap v5.1</title>
+<!-- Bootstrap core CSS -->
+<link href="./bootstrap.min.css" rel="stylesheet">
+<body>
+	<main>
+		<nav th:fragment="navbarFragment">
+			<div class="px-3 py-2 bg-dark text-white">
+				<div class="container">
+					<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+						<a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+						</a>
+						<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+							<li><a th:href="@{/}" class="nav-link text-secondary"> Home </a></li>
+							<li><a href="#" class="nav-link text-white"> 마이페이지 </a></li>
+							<li><a th:href="@{/question/list}" class="nav-link text-white"> 게시판 </a>	</li>
+							<li><a href="#" class="nav-link text-white"> 컨텐츠 </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="px-3 py-2 border-bottom mb-3">
+				<div class="container d-flex flex-wrap justify-content-center">
+					
+					<div class="text-end">
+					<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+						<li><a class="nav-link text-secondary" sec:authorize="isAnonymous()" th:href="@{/user/login}">LOGIN</a></li>
+						<li><a class="nav-link text-secondary" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">LOGOUT</a></li>
+						<li><a class="nav-link text-secondary" sec:authorize="isAuthenticated()" th:href="@{/user/withdrawal}">회원탈퇴</a></li>
+						<!-- <li><a class="nav-link text-secondary" sec:authorize="isAuthenticated()" th:href="#">My Account</a></li> -->
+						<li><a class="nav-link text-secondary" th:href="@{/user/signup}">회원가입</a> </li>
+						<li><a sec:authorize="isAuthenticated()" th:value="${username}">님 환영합니다.</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</main>
+</body>
+
+
+

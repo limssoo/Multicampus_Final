@@ -14,8 +14,8 @@
     <div th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
         <div th:replace="form_errors :: formErrorsFragment"></div>
         <div>
-            <label for="username" class="form-label">사용자ID</label>
-            <input type="text" th:field="*{username}" class="form-control">
+            <label for="name" class="form-label">사용자ID</label>
+            <input type="text" th:field="*{name}" class="form-control">
         </div>
         <div>
             <label for="password" class="form-label">비밀번호</label>

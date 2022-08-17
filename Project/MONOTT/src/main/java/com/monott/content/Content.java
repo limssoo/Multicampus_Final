@@ -1,16 +1,6 @@
 package com.monott.content;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-import lombok.Getter;
-import lombok.Setter;
-
-//@Getter
-//@Setter
-//@Entity
 public class Content {
 
 //	@Id
@@ -24,10 +14,15 @@ public class Content {
 //	
 //	private String Content_Name;
 //	
+//	@Column(columnDefinition = "TEXT")
 //	private String Content_Info;
 //	
-//	// 이미지 내용 추가 필요
-//	
+//
 //	private Integer Content_Score;
+	
+//	private String filename;
+//	
+//	private String filepath;
+	
 	
 }

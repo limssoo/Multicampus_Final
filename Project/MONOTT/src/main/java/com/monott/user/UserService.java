@@ -16,9 +16,9 @@ public class UserService {
 	private final PasswordEncoder passwordEncoder;
 
 	
-	public SiteUser create(String username,String password,String phone,String address,Date birth) {
-        SiteUser user = new SiteUser();
-        user.setUsername(username);
+	public User create(String name,String password,String phone,String address,Date birth) {
+        User user = new User();
+        user.setName(name);
         user.setPhone(phone);
         user.setAddress(address);
         user.setBirth(birth);

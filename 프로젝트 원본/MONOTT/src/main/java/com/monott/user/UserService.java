@@ -2,7 +2,6 @@ package com.monott.user;
 
 import java.util.Date;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +15,8 @@ public class UserService {
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
 	
-	public User create(String ID, String Password, String Name, String Phone, Date Birth, String Address) {
-		User user = new User();
+	public SiteUser create(String ID, String Password, String Name, String Phone, Date Birth, String Address) {
+		SiteUser user = new SiteUser();
 		
 		user.setID(ID);
 		user.setName(Name);
@@ -28,4 +27,6 @@ public class UserService {
 		this.userRepository.save(user);
 		return user;
 	}
+	
+	
 }

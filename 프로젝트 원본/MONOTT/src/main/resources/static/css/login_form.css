@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+}
+body{
+	background-color: #111111;
+}
+span{
+	color:white;
+}
+input{
+	color:white;
+}
+.loginbox{
+	
+	width: 500px;
+    height: 500px;
+    margin: auto;
+    padding:0 40px;
+    font-size: 20px;
+    background-color: #111111;
+    
+	
+}
+.logo_home{
+    width: 250px;
+    height: 90px;
+    margin:0 auto;
+    display:block;
+    background-color: #111111;
+  }
+.errorbox{
+	background-color: #111111;
+	color:#e69e19
+}
+.login{
+	width: 50%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background-color:#cc0000;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    font-size:15px
+}
+.loginbtn{
+	text-align: center;
+    margin: 35px auto;
+}
+.form-label{
+	color:white;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    
+    
+}
+.signup{
+    border: none;
+    background-color: inherit;
+    padding: 14px 0 0 180px;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+}
+.taxt{
+	margin: 50px auto;
+    text-align: center;
+    color:white;
+}
+.findbtn{
+	border: none;
+    background-color: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    color:white;
+}
+.checkbox {
+    margin: 30px 10px 30px 0;
+}
+.social-icons {
+    margin: 10px auto;
+    text-align: center;
+}
+.social-icons img {
+    width: 30px ;
+    cursor: pointer;
+}

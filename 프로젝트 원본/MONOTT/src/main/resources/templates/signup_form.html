@@ -11,31 +11,35 @@
             <h4>회원가입</h4>
         </div>
     </div>
-    <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+    <form th:action="@{/user/signup}" th:object="${userSignupForm}" method="post">
         <div th:replace="form_errors :: formErrorsFragment"></div>
+         <div>
+            <label for="id" class="form-label">아이디</label>
+            <input type="text" th:field="*{ID}" class="form-control">
+        </div>
         <div>
-            <label for="name" class="form-label">사용자ID</label>
-            <input type="text" th:field="*{name}" class="form-control">
+            <label for="name" class="form-label">이름</label>
+            <input type="text" th:field="*{Name}" class="form-control">
         </div>
         <div>
             <label for="password" class="form-label">비밀번호</label>
-            <input type="password" th:field="*{password1}" class="form-control">
+            <input type="password" th:field="*{Password1}" class="form-control">
         </div>
         <div>
             <label for="password" class="form-label">비밀번호 확인</label>
-            <input type="password" th:field="*{password2}" class="form-control">
+            <input type="password" th:field="*{Password2}" class="form-control">
         </div>
         <div>
             <label for="phone" class="form-label">전화번호</label>
-            <input type="tel" th:field="*{phone}" class="form-control">
+            <input type="tel" th:field="*{Phone}" class="form-control">
         </div>
         <div>
             <label for="address" class="form-label">주소</label>
-            <input type="text" th:field="*{address}" class="form-control">
+            <input type="text" th:field="*{Address}" class="form-control">
         </div>
         <div>
-            <label for="birth" class="form-label">생년월일</label>
-            <input type="text" th:field="*{birth}" class="form-control">
+            <label for="birth" class="form-label">생일</label>
+            <input type="date" th:field="*{Birth}" class="form-control">
         </div>
         <button type="submit" class=signupbtn>회원가입</button>
     </div>

@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,6 +28,7 @@ public class UserCreateForm {
     private String phone;
     
     private String address;
-
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birth;
 }

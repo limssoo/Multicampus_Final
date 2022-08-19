@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+}
+body{
+	background-color: #111111;
+}
+h1{
+	color:white;
+}
+span{
+	color:white;
+}
+input{
+	color:white;
+}
+input[type="date"]{
+  position: relative;
+  min-height:30px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  font-size:18px;
+}
+
+input[type="date"]::-webkit-clear-button,
+input[type="date"]::-webkit-inner-spin-button { 
+    display: none;
+    
+} 
+input[type="date"]::-webkit-calendar-picker-indicator { 
+    background-color: white;
+} 
+
+.input_date_box input:after{
+  position: absolute;
+  top:50%;
+  right:10px;
+  content: '';
+  width: 20px;
+  height:22px;
+
+  background: #fff url('https://lh3.googleusercontent.com/ogw/ADea4I6bjkdf2t0DAHqD6ZP5ylrs5LMS6FOR0JxyZxHn=s83-c-mo') center center /contain;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+
+
+.logo_home{
+    width: 250px;
+    height: 90px;
+    margin:50px auto;
+    display:block;
+    background-color: #111111;
+  }
+.errorbox{
+	background-color: #111111;
+	color:#e69e19
+}
+.signupbox{
+	background-color:white;
+	width: 500px;
+    height: 900px;
+    margin: auto;
+    padding:0 40px;
+    font-size: 20px;
+    background-color: #111111;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    
+    
+}
+.form-label{
+	color:white;
+}
+.signupbtn{
+	text-align: center;
+    margin: 35px auto;
+}
+.signup{
+	width: 50%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background-color:#cc0000;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    font-size:15px
+}
+.birth{
+	background-color: #111111;
+}

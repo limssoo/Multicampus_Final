@@ -1,0 +1,44 @@
+<html layout:decorate="~{layout}">
+<link rel="stylesheet" th:href="@{/css/login_form.css}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<div layout:fragment="content" class="loginform">
+<div>
+<a class="nav-link" th:href="@{/}"><input type="image" src="/imgs/MONOTT logo.png" alt="logo_home" class="logo_home">
+</a>
+        </div>
+    <form th:action="@{/user/login}" method="post">
+    <div class="loginbox">
+    <h1 type="text" class="taxt">로그인</h1>
+    <div class="social-icons">
+                    <img src="/imgs/naver_logo.png" alt="naver">
+                    <img src="/imgs/kakao_logo.png" alt="kakao">
+                    <img src="/imgs/google_logo.png" alt="google">
+                </div>
+        <div th:if="${param.error}" class="errorbox">
+            <div class="alert alert-danger">
+                사용자ID 또는 비밀번호를 확인해 주세요.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">사용자ID</label>
+            <input type="text" name="username" id="username"  class="input-field" placeholder="아이디를 입력하세요">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">비밀번호</label>
+            <input type="password" name="password" id="password" class="input-field" placeholder="비밀번호를 입력하세요">
+        </div>
+        <div class="subbtn">
+        <input type="checkbox" class="checkbox"><span>자동로그인</span>
+        <a th:href="@{/user/signup}" class="signup">회원가입</a>
+        <button class="findbtn">아이디/비밀번호찾기</button>
+        </div> 
+        <div class="loginbtn">       
+        <button type="submit" class="login">로그인</button>
+        </div>
+        
+        </div>
+    </form>
+</div>
+</html>

@@ -1,6 +1,6 @@
 $(function () {
 
-    $(".modalbtn").click(function () {
+    $(".menu-trigger").click(function () {
       $(".modal").fadeIn();
     });
 

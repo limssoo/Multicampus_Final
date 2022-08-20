@@ -1,44 +1,152 @@
 <html layout:decorate="~{layout}">
 <link rel="stylesheet" th:href="@{/css/login_form.css}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="/js/main.js"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
+	rel="stylesheet">
 <div layout:fragment="content" class="loginform">
-<div>
-<a class="nav-link" th:href="@{/}"><input type="image" src="/imgs/MONOTT logo.png" alt="logo_home" class="logo_home">
-</a>
-        </div>
-    <form th:action="@{/user/login}" method="post">
-    <div class="loginbox">
-    <h1 type="text" class="taxt">로그인</h1>
-    <div class="social-icons">
-                    <img src="/imgs/naver_logo.png" alt="naver">
-                    <img src="/imgs/kakao_logo.png" alt="kakao">
-                    <img src="/imgs/google_logo.png" alt="google">
-                </div>
-        <div th:if="${param.error}" class="errorbox">
-            <div class="alert alert-danger">
-                사용자ID 또는 비밀번호를 확인해 주세요.
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="username" class="form-label">사용자ID</label>
-            <input type="text" name="username" id="username"  class="input-field" placeholder="아이디를 입력하세요">
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">비밀번호</label>
-            <input type="password" name="password" id="password" class="input-field" placeholder="비밀번호를 입력하세요">
-        </div>
-        <div class="subbtn">
-        <input type="checkbox" class="checkbox"><span>자동로그인</span>
-        <a th:href="@{/user/signup}" class="signup">회원가입</a>
-        <button class="findbtn">아이디/비밀번호찾기</button>
-        </div> 
-        <div class="loginbtn">       
-        <button type="submit" class="login">로그인</button>
-        </div>
-        
-        </div>
-    </form>
+	<div>
+		<a class="nav-link" th:href="@{/}"><input type="image"
+			src="/imgs/MONOTT logo.png" alt="logo_home" class="logo_home">
+		</a>
+	</div>
+	<form th:action="@{/user/login}" method="post">
+		<div class="loginbox">
+			<h1 type="text" class="taxt">로그인</h1>
+			<div class="social-icons">
+			<a id="naverIdLogin_loginButton" href="javascript:void(0)">	
+			<img src="/imgs/naver_logo.png" alt="naver"></a> 
+				<a href="javascript:void(0)" onclick="kakaoLogin();" sec:authorize="isAnonymous()"> <img
+					src="/imgs/kakao_logo.png" alt="kakao"></a> <a
+					href="javascript:void(0)" onclick="kakaoLogout();"> <span>카카오
+						로그아웃</span>
+						<li onclick="naverLogout(); return false;">
+      <a href="javascript:void(0)">
+          <span>네이버 로그아웃</span>
+      </a>
+				</a> <img src="/imgs/google_logo.png" alt="google">
+			</div>
+			<div th:if="${param.error}" class="errorbox">
+				<div class="alert alert-danger">사용자ID 또는 비밀번호를 확인해 주세요.</div>
+			</div>
+			<div class="mb-3">
+				<label for="username" class="form-label">사용자ID</label> <input
+					type="text" name="username" id="username" class="input-field"
+					placeholder="아이디를 입력하세요">
+			</div>
+			<div class="mb-3">
+				<label for="password" class="form-label">비밀번호</label> <input
+					type="password" name="password" id="password" class="input-field"
+					placeholder="비밀번호를 입력하세요">
+			</div>
+			<div class="subbtn">
+				<input type="checkbox" class="checkbox"><span>자동로그인</span> <a
+					th:href="@{/user/signup}" class="signup">회원가입</a>
+				<button class="findbtn">아이디/비밀번호찾기</button>
+			</div>
+			<div class="loginbtn">
+				<button type="submit" class="login">로그인</button>
+			</div>
+
+		</div>
+	</form>
 </div>
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+Kakao.init('f9ce4a6640587c588769cfa6a111f8bc'); //발급받은 키 중 javascript키를 사용해준다.
+console.log(Kakao.isInitialized()); // sdk초기화여부판단
+//카카오로그인
+function kakaoLogin() {
+    Kakao.Auth.login({
+    	 scope:'profile_nickname,account_email,gender',
+      success: function (response) {
+        Kakao.API.request({
+          url: '/v2/user/me',
+          success: function (response) {
+        	  console.log(response)
+        	  window.location.href='/'
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+      },
+      fail: function (error) {
+        console.log(error)
+      },
+    })
+  }
+//카카오로그아웃  
+function kakaoLogout() {
+    if (Kakao.Auth.getAccessToken()) {
+      Kakao.API.request({
+        url: '/v1/user/unlink',
+        success: function (response) {
+        	console.log(response)
+        	window.location.href='/'
+        },
+        fail: function (error) {
+          console.log(error)
+        },
+      })
+      Kakao.Auth.setAccessToken(undefined)
+    }
+  }  
+</script>
+
+
+<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+
+<script>
+
+var naverLogin = new naver.LoginWithNaverId(
+		{
+			clientId: "iFEYawbwNs5xOkkhW_UJ", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
+			callbackUrl: "http://localhost:9000/", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
+			isPopup: false,
+			callbackHandle: true
+		}
+	);	
+
+naverLogin.init();
+
+window.addEventListener('load', function () {
+	naverLogin.getLoginStatus(function (status) {
+		if (status) {
+			var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
+    		
+			console.log(naverLogin.user); 
+    		
+            if( email == undefined || email == null) {
+				alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
+				naverLogin.reprompt();
+				return;
+			}
+		} else {
+			console.log("callback 처리에 실패하였습니다.");
+		}
+	});
+});
+
+
+var testPopUp;
+function openPopUp() {
+    testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
+}
+function closePopUp(){
+    testPopUp.close();
+}
+
+function naverLogout() {
+	openPopUp();
+	setTimeout(function() {
+		closePopUp();
+		}, 1000);
+	
+	
+}
+</script>
 </html>

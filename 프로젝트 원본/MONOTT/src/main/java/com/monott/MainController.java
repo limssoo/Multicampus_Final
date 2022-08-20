@@ -8,7 +8,7 @@ public class MainController {
 	
 	@RequestMapping("/")
 	public String thymeleaf() {
-		return "home";
+		return "main.html";
 	}
 	
 }
